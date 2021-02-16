@@ -3,7 +3,6 @@
 # Use this hook to configure devise mailer, warden hooks and so forth.
 # Many of these configuration options can be set straight in your model.
 Devise.setup do |config|
-
   config.omniauth :salesloft, ENV["SALESLOFT_APPLICATION_ID"], ENV["SALESLOFT_APPLICATION_SECRET"], client_options: {
     :site => "https://api.salesloft.com",
     :authorize_url => "https://accounts.salesloft.com/oauth/authorize",

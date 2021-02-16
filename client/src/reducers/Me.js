@@ -7,6 +7,7 @@ export function me(
 ) {
   switch(action.type) {
     case RECEIVE_ME:
+      console.log("action", action)
       return merge(state, action.me)
     default:
       return state

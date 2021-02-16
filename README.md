@@ -47,3 +47,6 @@ bundle exec foreman start
 ```
 8.) Navigate to localhost:5000
 
+### Zach Wallace Specific instructions
+1. Add api key for backend:
+    a. Mac/Linux based computers: Need to add api key via: `export API_KEY=PLEASE_ENTER_VALID_API_KEY_HERE`

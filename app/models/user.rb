@@ -16,6 +16,7 @@ class User < ApplicationRecord
       token.expires_at = auth.credentials.expires_at
     end
 
+    print("user -- #{user}")
     user
   end
 end
