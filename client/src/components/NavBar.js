@@ -60,9 +60,12 @@ let SignInBadge = () => (
 
 let UserBadge = ({ user }) => (
   <Badge>
-    <a href="/users/auth/logout" style={{ textDecoration: "none" }}>
-      <NavText>{user.name}</NavText>
-    </a>
+    <NavButton
+      type="button"
+      onClick={() => alert("Sorry, this feature is currently unavailable.")}
+    >
+      {user.name}
+    </NavButton>
   </Badge>
 );
 
