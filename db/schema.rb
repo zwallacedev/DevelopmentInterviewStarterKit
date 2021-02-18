@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180114224612) do
+ActiveRecord::Schema.define(version: 20210217052248) do
+
+  create_table "people", force: :cascade do |t|
+    t.string "email"
+  end
 
   create_table "tokens", force: :cascade do |t|
     t.string "access_token"

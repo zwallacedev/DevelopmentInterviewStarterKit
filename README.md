@@ -17,36 +17,51 @@ Included in the package.
 ### Running natively
 
 1.) Make sure your ruby environment is at least 2.4.1
+
 ```
 ruby --version
 ```
+
 2.) Make sure your node version is above 8.5.0
+
 ```
 node --version
 ```
+
 3.) bundle install
+
 ```
 gem install bundle
 bundle install
 ```
+
 4.) npm install
+
 ```
 npm install
 ```
+
 5.) Create and migrate Sqlite Databases
+
 ```
 bundle exec rake db:create && bundle exec rake db:migrate
 ```
+
 6.) Copy the .env.sample to .env and fill out the values
+
 ```
 cp .env.sample .env
 ```
+
 7.) Start the development server
+
 ```
 bundle exec foreman start
 ```
+
 8.) Navigate to localhost:5000
 
 ### Zach Wallace Specific instructions
-1. Add api key for backend:
-    a. Mac/Linux based computers: Need to add api key via: `export API_KEY=PLEASE_ENTER_VALID_API_KEY_HERE`
+
+1. Please make sure the API key is properly stored in the `.env` file as `SALESLOFT_APPLICATION_SECRET`
+2. To run the specs on the API, please run: `rspec`

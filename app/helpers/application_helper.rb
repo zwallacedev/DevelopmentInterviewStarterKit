@@ -2,7 +2,7 @@ require 'net/http'
 
 module ApplicationHelper
     def http_get(url)
-        apiKey = "Bearer #{ENV["API_KEY"]}"
+        apiKey = "Bearer #{ENV["SALESLOFT_APPLICATION_SECRET"]}"
 
         uri = URI(url)
         req = Net::HTTP::Get.new(uri)
