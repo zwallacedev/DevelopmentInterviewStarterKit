@@ -1,1 +1,10 @@
-export const RECEIVE_ME = 'RECEIVE_ME';
+export const PEOPLE_LIST = "PEOPLE_LIST";
+export const RECEIVE_ME = "RECEIVE_ME";
+
+// step 2
+export const SHOW_FREQUENCY_FOR_ID = "SHOW_FREQUENCY_FOR_ID";
+export const HIDE_FREQUENCY_FOR_ID = "HIDE_FREQUENCY_FOR_ID";
+
+// step 3
+export const SHOW_SUGGESTION_FOR_ID = "SHOW_SUGGESTION_FOR_ID";
+export const HIDE_SUGGESTION_FOR_ID = "HIDE_SUGGESTION_FOR_ID";

@@ -1,10 +1,10 @@
-import NavBar from '../components/NavBar'
-import { connect } from 'react-redux'
+import NavBar from "../components/NavBar";
+import { connect } from "react-redux";
 
-const mapStateToProps = state => ({ user: state.me.user });
+const mapStateToProps = state => {
+  return { user: state.me };
+};
 
-export const ConnectedNavBar = connect(
-  mapStateToProps
-)(NavBar);
+export const ConnectedNavBar = connect(mapStateToProps)(NavBar);
 
-export default ConnectedNavBar
+export default ConnectedNavBar;

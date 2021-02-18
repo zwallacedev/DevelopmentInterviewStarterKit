@@ -1,5 +1,8 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from "react";
+import styled from "styled-components";
+import { withRouter } from "react-router-dom";
+
+import { fetchMe, fetchPeopleList } from "../actions/AsyncActions";
 
 const NAV_HEIGHT = 46;
 const AVATAR_HEIGHT = 40;
@@ -23,6 +26,16 @@ let NavText = styled.p`
   color: white;
 `;
 
+let NavButton = styled.button`
+  color: #4a90e2;
+  padding-right: 10px;
+  padding-left: 10px;
+  color: white;
+  background: none;
+  border: none;
+  font-size: 25px;
+  font-weight: bold;
+`;
 const Badge = styled.div`
   margin: 3px;
   display: flex;
@@ -39,20 +52,55 @@ const Badge = styled.div`
 
 let SignInBadge = () => (
   <Badge>
-    <a href='/users/auth/salesloft' style={{textDecoration: 'none'}}><NavText>Login</NavText></a>
+    <a href="/users/auth/salesloft" style={{ textDecoration: "none" }}>
+      <NavText>Login</NavText>
+    </a>
   </Badge>
 );
 
-let UserBadge = ({user}) => (
+let UserBadge = ({ user }) => (
   <Badge>
-    <a href='/users/auth/logout' style={{textDecoration: 'none'}}><NavText>{user.name}</NavText></a>
+    <a href="/users/auth/logout" style={{ textDecoration: "none" }}>
+      <NavText>{user.name}</NavText>
+    </a>
   </Badge>
 );
 
-let NavBar = ({user}) => (
-  <StyledNavBar>
-    {user ? <UserBadge user={user} /> : <SignInBadge />}
-  </StyledNavBar>
-);
+const PeopleListButton = withRouter(({ history }) => (
+  <Badge>
+    <NavButton
+      type="button"
+      onClick={() => {
+        store.dispatch(fetchPeopleList());
+        history.push("/people");
+      }}
+    >
+      People List
+    </NavButton>
+  </Badge>
+));
 
-export default NavBar
+const Home = withRouter(({ history }) => (
+  <Badge>
+    <NavButton
+      type="button"
+      onClick={() => {
+        store.dispatch(fetchMe());
+        history.push("/");
+      }}
+    >
+      Home
+    </NavButton>
+  </Badge>
+));
+let NavBar = ({ user }) => {
+  return (
+    <StyledNavBar>
+      <Home></Home>
+      <PeopleListButton></PeopleListButton>
+      {user ? <UserBadge user={user} /> : <SignInBadge />}
+    </StyledNavBar>
+  );
+};
+
+export default NavBar;
